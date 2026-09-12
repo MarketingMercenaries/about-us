@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Full Portfolio — Marketing Mercenaries</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+  :root{
+    --ink:#12141c;
+    --ink-2:#1a1d28;
+    --paper:#f5f6fa;
+    --paper-2:#eaecf4;
+    --line:#12141c1a;
+    --line-dark:#f5f6fa22;
+    --indigo:#4b4ef2;
+    --indigo-dim:#3638c4;
+    --lime:#8ee000;
+    --ink-text:#eef0fa;
+    --ink-text-dim:#9ba0c0;
+    --paper-text:#171928;
+    --paper-text-dim:#5c6080;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;color-scheme:light;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--paper-text);
+    font-family:'Manrope', -apple-system, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--indigo);color:#fff;}
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-weight:700;
+    line-height:1.08;
+    text-wrap:balance;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;}
+  .wrap{max-width:1140px;margin:0 auto;padding-inline:24px;}
+  @media (max-width:480px){.wrap{padding-inline:16px;}}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);}
+  .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;position:relative;}
+  .brand-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.05rem,2.4vw,1.25rem);}
+  .brand-tag{font-size:0.72rem;color:var(--paper-text-dim);}
+  .back-link{font-size:0.85rem;font-weight:600;text-decoration:none;color:var(--paper-text-dim);display:flex;align-items:center;gap:6px;}
+  .back-link:hover{color:var(--indigo-dim);}
+
+  .pf-hero{background:var(--ink);color:var(--ink-text);border-bottom:1px solid var(--line-dark);}
+  .pf-hero .wrap{padding-block:44px 40px;}
+  .pf-hero h1{font-size:clamp(1.8rem,4.6vw,2.6rem);color:#fff;max-width:22ch;}
+  .pf-hero p{max-width:60ch;font-size:1.02rem;color:var(--ink-text-dim);line-height:1.65;margin-top:14px;}
+
+  section{padding-block:48px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;font-size:0.88rem;font-weight:600;text-decoration:none;border-radius:6px;border:none;transition:transform .15s ease;cursor:pointer;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-solid{background:var(--indigo);color:#fff;}
+
+  .pf-lede{font-size:0.95rem;color:var(--paper-text-dim);margin:0 0 24px;max-width:64ch;}
+  .pf-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px;}
+  .pf-filter{font-size:0.82rem;font-weight:600;padding:7px 14px;border-radius:20px;border:1px solid var(--line);background:#fff;color:var(--paper-text-dim);cursor:pointer;}
+  .pf-filter.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  @media (max-width:900px){.pf-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.pf-grid{grid-template-columns:1fr;}}
+  .pf-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:8px;}
+  .pf-card.hidden{display:none;}
+  .pf-type{font-size:0.72rem;font-weight:700;text-transform:uppercase;color:var(--indigo-dim);letter-spacing:0.02em;}
+  .pf-title{font-size:0.92rem;font-weight:600;line-height:1.4;flex:1;}
+  .pf-tag{font-size:0.78rem;color:var(--paper-text-dim);}
+  .pf-link{font-size:0.85rem;color:var(--indigo-dim);text-decoration:none;font-weight:600;}
+  .pf-award{display:inline-flex;align-items:center;gap:5px;font-size:0.7rem;font-weight:600;text-transform:uppercase;color:#8a6800;background:#fdf3d8;border:1px solid #ecd48a;padding:3px 8px;border-radius:20px;width:fit-content;}
+
+  .midcta{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:32px;text-align:center;}
+  .midcta p{margin:0 0 14px;font-size:1.05rem;font-weight:600;color:var(--paper-text);}
+
+  footer{border-top:1px solid var(--line-dark);background:var(--ink);color:var(--ink-text-dim);}
+  footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:0.8rem;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div>
+      <div class="brand-name">Marketing Mercenaries</div>
+      <div class="brand-tag">Fractional Product Marketing</div>
+    </div>
+    <a class="back-link" href="index.html">← Back to main site</a>
+  </div>
+</div>
+
+<header class="pf-hero">
+  <div class="wrap">
+    <h1>The full portfolio</h1>
+    <p>20+ published pieces across AT&amp;T, Kobiton, and Auth0/authID: 8 ebooks, 4 videos, and more than a dozen technical articles and blog posts, several award-winning.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="pf-lede">Filter by type, or scroll the whole list.</p>
+    <div class="pf-filters">
+      <button class="pf-filter on" onclick="pf('all',this)">All</button>
+      <button class="pf-filter" onclick="pf('ebook',this)">Ebooks</button>
+      <button class="pf-filter" onclick="pf('video',this)">Videos</button>
+      <button class="pf-filter" onclick="pf('article',this)">Articles</button>
+    </div>
+    <div class="pf-grid" id="pf-grid">
+
+      <div class="pf-card" data-t="ebook">
+        <div class="pf-type">Ebook · AT&amp;T Business</div>
+        <div class="pf-title">Simplifying SASE, SSE, SD-WAN and ZTNA</div>
+        <div class="pf-award">5 awards incl. Stevie Gold, Best White Paper</div>
+        <a class="pf-link" href="https://www.business.att.com/content/dam/attbusiness/ebooks/simplifying-sase.pdf" target="_blank" rel="noopener">Read the ebook →</a>
+      </div>
+      <div class="pf-card" data-t="ebook">
+        <div class="pf-type">Guide · AT&amp;T Business</div>
+        <div class="pf-title">2026 Small Business Cybersecurity Guide</div>
+        <div class="pf-tag">Available on request</div>
+      </div>
+      <div class="pf-card" data-t="ebook">
+        <div class="pf-type">Ebook · Kobiton</div>
+        <div class="pf-title">Kobiton vs. Perfecto: Choosing the Best Mobile Testing Solution</div>
+        <a class="pf-link" href="https://kobiton.com/resources/ebooks/" target="_blank" rel="noopener">View ebook →</a>
+      </div>
+      <div class="pf-card" data-t="ebook">
+        <div class="pf-type">Ebook · Kobiton</div>
+        <div class="pf-title">Kobiton vs. HeadSpin: Selecting the Right Testing Platform</div>
+        <a class="pf-link" href="https://kobiton.com/resources/ebooks/" target="_blank" rel="noopener">View ebook →</a>
+      </div>
+      <div class="pf-card" data-t="ebook">
+        <div class="pf-type">Ebook · Kobiton</div>
+        <div class="pf-title">Mastering Mobile Retail: A Guide to Flawless App Testing</div>
+        <a class="pf-link" href="https://kobiton.com/resources/ebooks/" target="_blank" rel="noopener">View ebook →</a>
+      </div>
+      <div class="pf-card" data-t="ebook">
+        <div class="pf-type">Ebook · Kobiton</div>
+        <div class="pf-title">How to Master Mobile App Testing in Finance and Banking</div>
+        <a class="pf-link" href="https://kobiton.com/resources/ebooks/" target="_blank" rel="noopener">View ebook →</a>
+      </div>
+      <div class="pf-card" data-t="ebook">
+        <div class="pf-type">Ebook · Kobiton</div>
+        <div class="pf-title">Best Practices for Hospitality App Development</div>
+        <a class="pf-link" href="https://kobiton.com/resources/ebooks/" target="_blank" rel="noopener">View ebook →</a>
+      </div>
+      <div class="pf-card" data-t="ebook">
+        <div class="pf-type">Ebook · Kobiton</div>
+        <div class="pf-title">The 2024 Guide to Mobile Game Testing</div>
+        <a class="pf-link" href="https://kobiton.com/resources/ebooks/" target="_blank" rel="noopener">View ebook →</a>
+      </div>
+
+      <div class="pf-card" data-t="video">
+        <div class="pf-type">Video · AT&amp;T Business</div>
+        <div class="pf-title">AT&amp;T Dynamic Defense Use Case Video</div>
+        <div class="pf-award">3 awards incl. 2 AVA Digital Honorable Mentions</div>
+        <a class="pf-link" href="https://www.youtube.com/watch?v=qTQPKMltqQA" target="_blank" rel="noopener">Watch video →</a>
+      </div>
+      <div class="pf-card" data-t="video">
+        <div class="pf-type">Video · AT&amp;T Business</div>
+        <div class="pf-title">ELI5: What is Network Security</div>
+        <a class="pf-link" href="https://www.youtube.com/watch?v=1EaSLO6emrQ" target="_blank" rel="noopener">Watch video →</a>
+      </div>
+      <div class="pf-card" data-t="video">
+        <div class="pf-type">Video · AT&amp;T Business</div>
+        <div class="pf-title">What is a Firewall</div>
+        <a class="pf-link" href="https://www.youtube.com/watch?v=im3jUao1-iM" target="_blank" rel="noopener">Watch video →</a>
+      </div>
+      <div class="pf-card" data-t="video">
+        <div class="pf-type">Video · AT&amp;T Business</div>
+        <div class="pf-title">What is Managed SASE with Cisco</div>
+        <a class="pf-link" href="https://www.youtube.com/watch?v=yuKVu5sW_iE" target="_blank" rel="noopener">Watch video →</a>
+      </div>
+
+      <div class="pf-card" data-t="article">
+        <div class="pf-type">Blog · Kobiton</div>
+        <div class="pf-title">Kobiton vs. Perfecto: Who Is the Better Choice for Mobile Testing?</div>
+        <a class="pf-link" href="https://kobiton.com/blog/kobiton-vs-perfecto-who-is-the-better-choice-for-mobile-testing/" target="_blank" rel="noopener">Read →</a>
+      </div>
+      <div class="pf-card" data-t="article">
+        <div class="pf-type">Blog · Kobiton</div>
+        <div class="pf-title">The Ultimate Manual Testing Tutorial</div>
+        <a class="pf-link" href="https://kobiton.com/blog/manual-testing-tutorial/" target="_blank" rel="noopener">Read →</a>
+      </div>
+      <div class="pf-card" data-t="article">
+        <div class="pf-type">Guest Post · Auth0</div>
+        <div class="pf-title">4 Ways to Strengthen Identity Authentication for Technical Roles</div>
+        <a class="pf-link" href="https://auth0.com/blog/4-ways-to-strengthen-identity-authentication-for-technical-roles/" target="_blank" rel="noopener">Read →</a>
+      </div>
+
+      <div class="pf-card" data-t="article"><div class="pf-type">Article · AT&amp;T Business</div><div class="pf-title">What is SASE?</div><a class="pf-link" href="https://www.business.att.com/learn/articles/what-is-sase.html" target="_blank" rel="noopener">Read →</a></div>
+      <div class="pf-card" data-t="article"><div class="pf-type">Article · AT&amp;T Business</div><div class="pf-title">SASE vs. SD-WAN: What's the Difference?</div><a class="pf-link" href="https://www.business.att.com/learn/articles/sase-vs-sd-wan.html" target="_blank" rel="noopener">Read →</a></div>
+      <div class="pf-card" data-t="article"><div class="pf-type">Knowledge Base · AT&amp;T</div><div class="pf-title">How does a business know it's ready for SD-WAN?</div><a class="pf-link" href="https://www.business.att.com/resources/knowledge-center/which-business-should-implement-sd-wan.html" target="_blank" rel="noopener">Read →</a></div>
+      <div class="pf-card" data-t="article"><div class="pf-type">Knowledge Base · AT&amp;T</div><div class="pf-title">How does SD-WAN provide redundancy?</div><a class="pf-link" href="https://www.business.att.com/resources/knowledge-center/sd-wan-is-a-redundancy-solution.html" target="_blank" rel="noopener">Read →</a></div>
+      <div class="pf-card" data-t="article"><div class="pf-type">Knowledge Base · AT&amp;T</div><div class="pf-title">How SD-WAN enables business continuity</div><a class="pf-link" href="https://www.business.att.com/resources/knowledge-center/what-can-att-sd-wan-do-for-your-business.html" target="_blank" rel="noopener">Read →</a></div>
+      <div class="pf-card" data-t="article"><div class="pf-type">Knowledge Base · AT&amp;T</div><div class="pf-title">Using SD-WAN for small business growth</div><a class="pf-link" href="https://www.business.att.com/resources/knowledge-center/sd-wan-for-small-business.html" target="_blank" rel="noopener">Read →</a></div>
+      <div class="pf-card" data-t="article"><div class="pf-type">Knowledge Base · AT&amp;T</div><div class="pf-title">What is credential stuffing?</div><a class="pf-link" href="https://www.business.att.com/resources/knowledge-center/what-is-credential-stuffing-and-how-to-prevent-credential-stuffing-attacks.html" target="_blank" rel="noopener">Read →</a></div>
+      <div class="pf-card" data-t="article"><div class="pf-type">Knowledge Base · AT&amp;T</div><div class="pf-title">Can the cloud be hacked?</div><a class="pf-link" href="https://www.business.att.com/resources/knowledge-center/can-the-cloud-be-hacked-cloud-computing-security-issues-and-challenges.html" target="_blank" rel="noopener">Read →</a></div>
+      <div class="pf-card" data-t="article"><div class="pf-type">Knowledge Base · AT&amp;T</div><div class="pf-title">What is a business VPN?</div><a class="pf-link" href="https://www.business.att.com/resources/knowledge-center/what-is-a-business-vpn.html" target="_blank" rel="noopener">Read →</a></div>
+      <div class="pf-card" data-t="article"><div class="pf-type">Blog · AT&amp;T Business</div><div class="pf-title">What is cybersecurity as a service?</div><a class="pf-link" href="https://www.business.att.com/learn/articles/cybersecurity-as-a-service-explained.html" target="_blank" rel="noopener">Read →</a></div>
+      <div class="pf-card" data-t="article"><div class="pf-type">Blog · AT&amp;T Business</div><div class="pf-title">How to secure your business network</div><a class="pf-link" href="https://www.business.att.com/learn/articles/how-to-secure-your-business-network.html" target="_blank" rel="noopener">Read →</a></div>
+      <div class="pf-card" data-t="article"><div class="pf-type">Blog · AT&amp;T Business</div><div class="pf-title">Network security: a new model for protecting business</div><a class="pf-link" href="https://www.business.att.com/learn/articles/network-security-a-new-model-for-protecting-business.html" target="_blank" rel="noopener">Read →</a></div>
+      <div class="pf-card" data-t="article"><div class="pf-type">Knowledge Base · AT&amp;T</div><div class="pf-title">How to prevent cross-site scripting</div><a class="pf-link" href="https://www.business.att.com/resources/knowledge-center/how-to-prevent-cross-site-scripting.html" target="_blank" rel="noopener">Read →</a></div>
+
+    </div>
+  </div>
+</section>
+
+<div class="midcta">
+  <div class="wrap">
+    <p>Enough proof? Let's talk about your project.</p>
+    <a class="btn btn-solid" href="mailto:lawrence.brittney2@gmail.com?subject=Engagement%20Inquiry">Email Me About Your Project</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="year"></span> Marketing Mercenaries</div>
+    <div>themarketingmercenaries.com</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function pf(tag, btn){
+    document.querySelectorAll('.pf-filter').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    document.querySelectorAll('#pf-grid .pf-card').forEach(c=>{
+      c.classList.toggle('hidden', tag !== 'all' && c.dataset.t !== tag);
+    });
+  }
+</script>
+
+</body>
+</html>

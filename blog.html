@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dispatches — Marketing Mercenaries</title>
+<meta name="description" content="Notes on security, AI, and go-to-market from Brittney Lawrence.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+  :root{
+    --ink:#12141c; --paper:#f5f6fa; --paper-2:#eaecf4; --line:#12141c1a;
+    --line-dark:#f5f6fa22; --indigo:#4b4ef2; --indigo-dim:#3638c4; --lime:#8ee000;
+    --ink-text:#eef0fa; --ink-text-dim:#9ba0c0; --paper-text:#171928; --paper-text-dim:#5c6080;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;color-scheme:light;}
+  body{margin:0;background:var(--paper);color:var(--paper-text);font-family:'Manrope',-apple-system,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  h1,h2,.display{font-family:'Space Grotesk',Arial,sans-serif;font-weight:700;line-height:1.1;text-wrap:balance;margin:0;letter-spacing:-0.01em;}
+  a{color:inherit;}
+  .wrap{max-width:900px;margin:0 auto;padding-inline:24px;}
+  @media (max-width:480px){.wrap{padding-inline:16px;}}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);}
+  .topbar-inner{max-width:900px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  @media (max-width:480px){.topbar-inner{padding:14px 16px;}}
+  .brand-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;}
+  .back-link{font-size:0.85rem;font-weight:600;text-decoration:none;color:var(--paper-text-dim);}
+  .back-link:hover{color:var(--indigo-dim);}
+
+  .bh{background:var(--ink);color:var(--ink-text);border-bottom:1px solid var(--line-dark);}
+  .bh .wrap{padding-block:44px 40px;}
+  .bh h1{font-size:clamp(1.8rem,4.6vw,2.6rem);color:#fff;max-width:20ch;}
+  .bh p{max-width:56ch;font-size:1.02rem;color:var(--ink-text-dim);line-height:1.65;margin-top:14px;}
+
+  section{padding-block:48px;}
+  .posts{display:grid;gap:16px;}
+  .post{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px;text-decoration:none;color:inherit;display:block;}
+  .post:hover{border-color:var(--indigo);}
+  .post-kicker{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.03em;color:var(--indigo-dim);margin-bottom:10px;}
+  .post h2{font-size:1.3rem;margin-bottom:10px;}
+  .post p{margin:0;font-size:0.95rem;line-height:1.6;color:var(--paper-text-dim);}
+  .post .read{display:inline-block;margin-top:14px;font-size:0.85rem;font-weight:600;color:var(--indigo-dim);}
+
+  footer{border-top:1px solid var(--line-dark);background:var(--ink);color:var(--ink-text-dim);}
+  footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:0.8rem;}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-inner">
+  <div class="brand-name">Marketing Mercenaries</div>
+  <a class="back-link" href="index.html">← Back to main site</a>
+</div></div>
+
+<header class="bh">
+  <div class="wrap">
+    <h1>Dispatches</h1>
+    <p>Notes on security, AI, and go-to-market, written from inside the work, not about it.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="posts">
+      <a class="post" href="blog-silo-segmentation.html">
+        <div class="post-kicker">Security &amp; GTM</div>
+        <h2>What "Silo" Gets Right About Your Security Stack, and Your Marketing Org</h2>
+        <p>Segmentation without shared visibility isn't zero trust. It's a bunker with better branding, and most GTM orgs have the same problem.</p>
+        <span class="read">Read the dispatch →</span>
+      </a>
+      <a class="post" href="blog-agentic-ai-deepfakes.html">
+        <div class="post-kicker">Security</div>
+        <h2>Your Security Stack Was Built to Stop Humans. It Wasn't Built for This.</h2>
+        <p>Agentic AI and deepfake voice fraud aren't two separate threats. They're the same one wearing different clothes.</p>
+        <span class="read">Read the dispatch →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div>© <span id="year"></span> Marketing Mercenaries</div>
+  <div>themarketingmercenaries.com</div>
+</div></footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

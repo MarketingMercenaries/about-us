@@ -1,0 +1,431 @@
+<title>Marketing Mercenaries</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+  :root{
+    --ink:#12141c;
+    --ink-2:#1a1d28;
+    --paper:#f5f6fa;
+    --paper-2:#eaecf4;
+    --line:#12141c1a;
+    --line-dark:#f5f6fa22;
+    --indigo:#4b4ef2;
+    --indigo-dim:#3638c4;
+    --lime:#8ee000;
+    --ink-text:#eef0fa;
+    --ink-text-dim:#9ba0c0;
+    --paper-text:#171928;
+    --paper-text-dim:#5c6080;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--paper-text);
+    font-family:'Manrope', -apple-system, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--indigo);color:#fff;}
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk', Arial, sans-serif;
+    font-weight:700;
+    line-height:1.08;
+    text-wrap:balance;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;}
+  .wrap{max-width:1140px;margin:0 auto;padding-inline:24px;}
+  @media (max-width:480px){.wrap{padding-inline:16px;}}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);}
+  .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;position:relative;}
+  .brand-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.05rem,2.4vw,1.25rem);}
+  .brand-tag{font-size:0.72rem;color:var(--paper-text-dim);}
+  nav.links{display:flex;gap:20px;font-size:0.85rem;font-weight:600;}
+  nav.links a{text-decoration:none;color:var(--paper-text-dim);white-space:nowrap;}
+  nav.links a:hover{color:var(--indigo-dim);}
+  @media (max-width:760px){nav.links{display:none;}}
+
+  .hero{background:var(--ink);color:var(--ink-text);border-bottom:1px solid var(--line-dark);}
+  .hero .wrap{padding-block:56px 64px;display:grid;gap:24px;}
+  .eyebrow{display:flex;align-items:center;gap:9px;font-size:0.78rem;font-weight:600;color:var(--lime);text-transform:uppercase;letter-spacing:0.03em;}
+  .eyebrow::before{content:"";width:8px;height:8px;background:var(--lime);border-radius:50%;flex-shrink:0;}
+  .hero h1{font-size:clamp(2.1rem,5.6vw,3.75rem);color:#fff;max-width:18ch;font-weight:700;}
+  .hero-sub{max-width:56ch;font-size:clamp(1.05rem,2.1vw,1.25rem);color:var(--ink-text-dim);line-height:1.6;}
+  .hero-sub b{color:#fff;font-weight:600;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;font-size:0.9rem;font-weight:600;text-decoration:none;border-radius:6px;border:1px solid transparent;transition:transform .15s ease;cursor:pointer;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-solid{background:var(--indigo);color:#fff;}
+  .btn-ghost{border-color:var(--line-dark);color:var(--ink-text);}
+  .btn-ghost:hover{border-color:var(--indigo);}
+
+  section{padding-block:60px;}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--line);}
+  .section-head h2{font-size:clamp(1.6rem,4vw,2.3rem);}
+  .section-note{max-width:36ch;font-size:0.9rem;color:var(--paper-text-dim);text-align:right;line-height:1.5;}
+  @media (max-width:640px){.section-note{text-align:left;}}
+  .lede{max-width:70ch;font-size:1.02rem;line-height:1.7;color:var(--paper-text-dim);margin:0 0 28px;}
+  .lede + .lede{margin-top:-14px;}
+  .lede b{color:var(--paper-text);font-weight:700;}
+
+  .why-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:74ch;}
+  .why-grid p{margin:0;font-size:1.05rem;line-height:1.75;color:var(--paper-text);}
+
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media (max-width:760px){.quotes{grid-template-columns:1fr;}}
+  .quote{background:#fff;border:1px solid var(--line);border-left:3px solid var(--indigo);border-radius:6px;padding:22px 24px;}
+  .quote p{margin:0 0 14px;font-size:0.96rem;line-height:1.65;color:var(--paper-text);}
+  .quote .who{font-size:0.85rem;font-weight:700;}
+  .quote .role{font-size:0.8rem;color:var(--paper-text-dim);}
+
+  .roster{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:8px;}
+  @media (max-width:760px){.roster{grid-template-columns:1fr;}}
+  .roster-item{background:#fff;padding:24px;display:flex;flex-direction:column;gap:8px;}
+  .roster-item h3{font-size:1.15rem;font-weight:700;}
+  .roster-item p{margin:0;font-size:0.92rem;line-height:1.6;color:var(--paper-text-dim);}
+
+  .files{display:grid;gap:16px;}
+  .file{border:1px solid var(--line);background:#fff;padding:24px;border-radius:8px;}
+  .file-client{font-size:0.78rem;color:var(--indigo-dim);font-weight:700;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:10px;}
+  .file h3{font-size:1.2rem;font-weight:700;margin-bottom:10px;text-wrap:balance;}
+  .file p{margin:0 0 12px;font-size:0.94rem;line-height:1.65;color:var(--paper-text-dim);}
+  .file-result{font-size:0.9rem;font-weight:600;color:var(--ink);}
+  .file-result b{color:var(--indigo-dim);}
+  .file-row{margin:0 0 10px;font-size:0.94rem;line-height:1.6;color:var(--paper-text-dim);}
+  .file-row b.file-label{color:var(--paper-text);font-weight:700;}
+
+  .pf-lede{font-size:0.95rem;color:var(--paper-text-dim);margin:-16px 0 24px;max-width:60ch;}
+  .pf-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;}
+  .pf-filter{font-size:0.82rem;font-weight:600;padding:7px 14px;border-radius:20px;border:1px solid var(--line);background:#fff;color:var(--paper-text-dim);cursor:pointer;}
+  .pf-filter.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  @media (max-width:900px){.pf-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.pf-grid{grid-template-columns:1fr;}}
+  .pf-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:8px;}
+  .pf-card.hidden{display:none;}
+  .pf-type{font-size:0.72rem;font-weight:700;text-transform:uppercase;color:var(--indigo-dim);letter-spacing:0.02em;}
+  .pf-title{font-size:0.92rem;font-weight:600;line-height:1.4;flex:1;}
+  .pf-tag{font-size:0.78rem;color:var(--paper-text-dim);}
+  .pf-link{font-size:0.85rem;color:var(--indigo-dim);text-decoration:none;font-weight:600;}
+  .pf-award{display:inline-flex;align-items:center;gap:5px;font-size:0.7rem;font-weight:600;text-transform:uppercase;color:#8a6800;background:#fdf3d8;border:1px solid #ecd48a;padding:3px 8px;border-radius:20px;width:fit-content;}
+
+  .calc-wrap{background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  @media (max-width:820px){.calc-wrap{grid-template-columns:1fr;}}
+  .calc-field{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+  .calc-field label{font-size:0.8rem;font-weight:600;color:var(--paper-text-dim);}
+  .calc-field .input-row{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:6px;padding:10px 12px;}
+  .calc-field .input-row span{color:var(--paper-text-dim);font-size:0.95rem;}
+  .calc-field input{border:none;outline:none;font-size:1rem;font-weight:700;color:var(--paper-text);width:100%;background:transparent;font-variant-numeric:tabular-nums;font-family:'Manrope',sans-serif;}
+  .calc-out{background:var(--ink);color:#fff;border-radius:8px;padding:24px;display:flex;flex-direction:column;gap:14px;justify-content:center;}
+  .calc-out .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+  .calc-out .label{font-size:0.82rem;color:var(--ink-text-dim);}
+  .calc-out .val{font-weight:700;font-size:1.05rem;font-variant-numeric:tabular-nums;}
+  .calc-out .hero-val{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;color:var(--lime);font-variant-numeric:tabular-nums;}
+  .calc-disclaimer{font-size:0.82rem;color:var(--paper-text-dim);line-height:1.6;margin-top:18px;}
+
+  .about-copy{max-width:70ch;}
+  .about-copy p{font-size:1rem;line-height:1.75;}
+  .about-copy p+p{margin-top:14px;}
+  .about-focus{margin-top:18px;font-size:0.92rem;color:var(--paper-text-dim);}
+
+  .contact{background:var(--ink);color:var(--ink-text);}
+  .contact .wrap{padding-block:60px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;}
+  .contact h2{font-size:clamp(1.9rem,5.5vw,3rem);color:#fff;max-width:18ch;}
+  .contact p{color:var(--ink-text-dim);max-width:50ch;font-size:1rem;line-height:1.6;}
+  .contact-cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px;}
+
+  .midcta{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:32px;text-align:center;}
+  .midcta p{margin:0 0 14px;font-size:1.05rem;font-weight:600;color:var(--paper-text);}
+
+  .navtoggle{display:none;background:none;border:none;cursor:pointer;padding:4px;}
+  .navtoggle span{display:block;width:22px;height:2px;background:var(--paper-text);margin:5px 0;}
+  @media (max-width:760px){
+    .navtoggle{display:block;}
+    nav.links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:8px 24px 16px;}
+    nav.links.open{display:flex;}
+    nav.links a{padding:10px 0;border-bottom:1px solid var(--line);}
+  }
+
+  footer{border-top:1px solid var(--line-dark);background:var(--ink);color:var(--ink-text-dim);}
+  footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:0.8rem;}
+</style>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div>
+      <div class="brand-name">Marketing Mercenaries</div>
+      <div class="brand-tag">Fractional Product Marketing</div>
+    </div>
+    <nav class="links" id="nav-links">
+      <a href="#why">Why Me</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="blog.html">Dispatches</a>
+      <a href="#calculator">Cost</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="navtoggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Fractional Product Marketing for Security &amp; AI Companies</div>
+    <h1>Don't hire GTM leadership that doesn't understand your product or your space, then act surprised they don't understand your customer.</h1>
+    <p class="hero-sub"><b>0-to-1 when there's no category yet. 1-to-10 when the engine exists but isn't working.</b> Product marketing, thought leadership, and sales enablement that fits your budget, your timeline, and your team. AI-accelerated workflows, not AI slop, from one person who does the strategy and the actual work.</p>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="mailto:lawrence.brittney2@gmail.com?subject=Engagement%20Inquiry">Email Me About Your Project</a>
+      <a class="btn btn-ghost" href="#cases">See the Work</a>
+    </div>
+    <p style="font-size:0.82rem;color:var(--ink-text-dim);margin:0;">Available for new engagements. I reply within a day.</p>
+  </div>
+</header>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Why work with me</h2>
+    </div>
+    <div class="why-grid" style="margin-bottom:36px;">
+      <p>Most fractional marketers plug into one function: they write, or they strategize, or they run campaigns. You're hiring one person to define the positioning, write the content that proves it, and hand your sales team language that actually closes, so nothing gets lost in translation between strategist and writer.</p>
+      <p>I've done this at the exact moment a category needed naming, and at the exact moment an existing motion had stalled and needed fixing. Both are proof you can check, not a resume claim.</p>
+      <p>And I build and run the AI-assisted production systems that make that possible, so you get more real output, faster, without adding to the flood of generic AI content buyers are already learning to tune out.</p>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <p>"Brittney is a standout product marketer who has elevated Kobiton's strategy with her execution and strategic vision. Her competitive and vertical campaigns in sectors like finance, gaming, and hospitality have driven real growth. She's also created in-depth product content that boosts user adoption and redefined our content and SEO strategies to stay agile amid the GenAI disruption."</p>
+        <div class="who">Cara Daly Suarez</div>
+        <div class="role">VP of Marketing, Kobiton (managed Brittney directly)</div>
+      </div>
+      <div class="quote">
+        <p>"I hired Brittney for a Product Marketing Manager role at Pindrop. Because Brittney is a great self-starter, she took very little time to get up to speed on Pindrop's products and processes. Since her arrival, she has increasingly demonstrated supreme understanding of modern marketing tactics, and her insights have helped our team produce better content in front of the right audiences faster than we have until her arrival."</p>
+        <div class="who">Ben Cunningham</div>
+        <div class="role">Product Marketing Leader (hired Brittney at Pindrop)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="what-i-do" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What I do</h2>
+    </div>
+    <div class="roster">
+      <div class="roster-item">
+        <h3>Fractional Product Marketing Leadership &amp; Support</h3>
+        <p>Portfolio positioning, launch strategy, and GTM ownership without the full-time headcount.</p>
+      </div>
+      <div class="roster-item">
+        <h3>Category Creation &amp; Positioning</h3>
+        <p>Naming the category before competitors do, and defining the terms your buyers end up searching for.</p>
+      </div>
+      <div class="roster-item">
+        <h3>Technical Content, Any Domain</h3>
+        <p>Authoritative content on complex and emerging technical subjects, given the time to learn the subject, written for the buyer who actually reads it. Proof spans QA engineers, network and security IT, fraud and risk teams, and identity developers, not just a list of topics.</p>
+      </div>
+      <div class="roster-item">
+        <h3>Search &amp; Content Systems</h3>
+        <p>Content built to rank on Google and get cited inside AI answer engines, not just published.</p>
+      </div>
+      <div class="roster-item">
+        <h3>Sales Enablement</h3>
+        <p>Messaging and content your sales team can actually use in a deal.</p>
+      </div>
+      <div class="roster-item">
+        <h3>Thought Leadership</h3>
+        <p>Executive-level narrative and content that opens doors with analysts, press, and partners.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Case studies</h2>
+      <p class="section-note">Client identities held under standard NDA. Categories and outcomes are exact.</p>
+    </div>
+    <div class="files">
+      <div class="file">
+        <div class="file-client">Fortune 50 Telecom, Cybersecurity Portfolio</div>
+        <h3>Rebuilding a multimillion-dollar security portfolio after an 18-month content gap</h3>
+        <div class="file-row"><b class="file-label">Walked into:</b> An 18-month publishing gap on a flagship security portfolio. No active content engine, no search presence, no narrative tying the product to how enterprises actually buy security today.</div>
+        <div class="file-row"><b class="file-label">Built:</b> Repositioned the product from a feature add-on into a lifecycle-integrated offering, rebuilt the content engine from zero, and set the enterprise narrative around AI-driven, network-derived threat intelligence.</div>
+        <div class="file-result">Result: <b>Page-one Google ranking within weeks of relaunch.</b> First-ever partner co-marketing initiative secured with a marquee security vendor.</div>
+      </div>
+      <div class="file">
+        <div class="file-client">Kobiton, Enterprise Mobile Testing SaaS</div>
+        <h3>Turning a stalled content program into a measurable pipeline channel</h3>
+        <div class="file-row"><b class="file-label">Walked into:</b> A blog and landing page program that had plateaued right as generative AI and zero-click search started eating into organic discovery.</div>
+        <div class="file-row"><b class="file-label">Built:</b> An SEO realignment and high-intent content strategy, backed by an AI-assisted production system built to increase output without adding to the AI content noise buyers are learning to ignore.</div>
+        <div class="file-result">Result: <b>42% YoY organic session growth</b> (53,490 to 75,913) and a <b>75% increase in landing page submission rate</b> (7.75% to 13.54%).</div>
+      </div>
+      <div class="file">
+        <div class="file-client">Terbium Labs</div>
+        <h3>Building the message that carried a company through acquisition</h3>
+        <div class="file-row"><b class="file-label">Walked into:</b> A digital risk protection and threat intelligence platform with no messaging foundation at all: no data sheet, no standardized voice, no content program.</div>
+        <div class="file-row"><b class="file-label">Built:</b> The company's first data sheet, a standardized voice across the site, a blog program, and three ebooks and a buyer's guide establishing its position in digital risk protection and threat intelligence.</div>
+        <div class="file-result">Result: <b>Acquired by Deloitte in 2021</b> to expand its threat intelligence portfolio.</div>
+      </div>
+      <div class="file">
+        <div class="file-client">Zero-Trust Biometric Authentication Platform</div>
+        <h3>Defining a category before the competition named it</h3>
+        <div class="file-row"><b class="file-label">Walked into:</b> A biometric authentication platform with strong technology and no category language yet: nothing establishing why "unphishable" identity mattered to a CISO's zero-trust roadmap.</div>
+        <div class="file-row"><b class="file-label">Built:</b> Established phishing-resistant, AI-powered biometric authentication as a required zero-trust defense layer, authored the company's first zero-trust white paper, and built analyst-informed positioning with Gartner.</div>
+        <div class="file-result">Result: <b>Top-three organic rankings</b> for "unphishable" and related high-intent terms. The white paper became the top lead-gen asset, and the Gartner-informed refresh lifted landing page CTR by 12%.</div>
+      </div>
+      <div class="file">
+        <div class="file-client">Voice Fraud &amp; Passwordless MFA Platforms</div>
+        <h3>Messaging foundations that outlived the engagement</h3>
+        <div class="file-row"><b class="file-label">Walked into:</b> Two enterprise security categories, voice fraud detection and passwordless MFA, each competing for the same identity-assurance buyer without a shared vocabulary for it.</div>
+        <div class="file-row"><b class="file-label">Built:</b> Core zero-trust and identity-assurance messaging adopted across sales collateral and the company website, the product page for a device-bound passwordless MFA platform, and competitive battle cards for the fraud-detection side.</div>
+        <div class="file-result">Result: <b>No. 1 organic Google ranking</b> for the MFA platform's flagship product page, and a page-one ranking for "contact center authentication" on the fraud-detection side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="midcta">
+  <div class="wrap">
+    <p>If one of these sounds like your situation, let's talk about it.</p>
+    <a class="btn btn-solid" href="mailto:lawrence.brittney2@gmail.com?subject=Engagement%20Inquiry">Email Me About Your Project</a>
+  </div>
+</div>
+
+<section id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Portfolio</h2>
+      <p class="section-note">A few highlights. 20+ published pieces total.</p>
+    </div>
+    <div class="pf-grid">
+      <div class="pf-card">
+        <div class="pf-type">Ebook · AT&amp;T Business</div>
+        <div class="pf-title">Simplifying SASE, SSE, SD-WAN and ZTNA</div>
+        <div class="pf-award">5 awards incl. Stevie Gold, Best White Paper</div>
+        <a class="pf-link" href="https://www.business.att.com/content/dam/attbusiness/ebooks/simplifying-sase.pdf" target="_blank">Read the ebook →</a>
+      </div>
+      <div class="pf-card">
+        <div class="pf-type">Video · AT&amp;T Business</div>
+        <div class="pf-title">AT&amp;T Dynamic Defense Use Case Video</div>
+        <div class="pf-award">3 awards incl. 2 AVA Digital Honorable Mentions</div>
+        <a class="pf-link" href="https://www.youtube.com/watch?v=qTQPKMltqQA" target="_blank">Watch video →</a>
+      </div>
+      <div class="pf-card">
+        <div class="pf-type">Guest Post · Auth0</div>
+        <div class="pf-title">4 Ways to Strengthen Identity Authentication for Technical Roles</div>
+        <a class="pf-link" href="https://auth0.com/blog/4-ways-to-strengthen-identity-authentication-for-technical-roles/" target="_blank">Read →</a>
+      </div>
+      <div class="pf-card">
+        <div class="pf-type">Ebook · Kobiton</div>
+        <div class="pf-title">Kobiton vs. HeadSpin: Selecting the Right Testing Platform</div>
+        <a class="pf-link" href="https://kobiton.com/resources/ebooks/" target="_blank">View ebook →</a>
+      </div>
+      <div class="pf-card">
+        <div class="pf-type">Knowledge Base · AT&amp;T</div>
+        <div class="pf-title">What is credential stuffing?</div>
+        <a class="pf-link" href="https://www.business.att.com/resources/knowledge-center/what-is-credential-stuffing-and-how-to-prevent-credential-stuffing-attacks.html" target="_blank">Read →</a>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px;">
+      <a class="btn btn-ghost" style="border-color:var(--line);color:var(--paper-text);" href="portfolio.html">See the Full Portfolio →</a>
+    </div>
+  </div>
+</section>
+
+<div class="midcta">
+  <div class="wrap">
+    <p>See enough to know if this is worth a conversation?</p>
+    <a class="btn btn-solid" href="mailto:lawrence.brittney2@gmail.com?subject=Engagement%20Inquiry">Email Me About Your Project</a>
+  </div>
+</div>
+
+<section id="calculator" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="section-head" style="border-color:var(--line);">
+      <h2>What this actually costs</h2>
+      <p class="section-note">Adjust the numbers. They're yours to change.</p>
+    </div>
+    <div class="calc-wrap">
+      <div>
+        <div class="calc-field">
+          <label>Full-time hire, annual base salary</label>
+          <div class="input-row"><span>$</span><input type="number" id="ft-salary" value="178749" oninput="calc()"></div>
+        </div>
+        <div class="calc-field">
+          <label>Loaded cost multiplier (benefits, payroll tax, overhead)</label>
+          <div class="input-row"><input type="number" id="ft-mult" value="1.3" step="0.05" oninput="calc()"><span>×</span></div>
+        </div>
+        <div class="calc-field">
+          <label>Fractional engagement, monthly retainer</label>
+          <div class="input-row"><span>$</span><input type="number" id="fr-monthly" value="14000" oninput="calc()"></div>
+        </div>
+      </div>
+      <div class="calc-out">
+        <div class="row"><span class="label">Full-time, fully loaded</span><span class="val" id="out-ft">$232,373</span></div>
+        <div class="row"><span class="label">Fractional, annualized</span><span class="val" id="out-fr">$168,000</span></div>
+        <div class="row" style="border-top:1px solid rgba(255,255,255,.15);padding-top:12px;">
+          <span class="label">Annual savings</span>
+          <span class="hero-val" id="out-save">$64,373</span>
+        </div>
+        <div class="row"><span class="label">Plus: no 3 to 6 month exec search</span><span class="val">Start next week</span></div>
+      </div>
+    </div>
+    <p class="calc-disclaimer">Full-time default reflects the September 2026 average base salary for Director of Product Marketing, Cybersecurity (ZipRecruiter). These are averages, not a quote. If you want a real one, that requires talking to me, which is sort of the point of this page.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>About</h2>
+    </div>
+    <div class="about-copy">
+      <p>14+ years building go-to-market for identity security, fraud detection, zero-trust authentication, and AI-native threat intelligence. The pattern across every engagement is the same: come in as a builder, not an optimizer, and leave behind a system that keeps working without a full-time hire attached to it.</p>
+      <p class="about-focus"><a href="https://linkedin.com/in/brittneynliburd" target="_blank" rel="noopener" style="color:var(--indigo-dim);font-weight:600;text-decoration:none;">More on LinkedIn →</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;">Open to new engagements</div>
+    <h2>Ready to define the category before someone else does?</h2>
+    <p>Tell me what's not working: the positioning, the pipeline, the narrative that isn't landing with technical buyers. I'll tell you honestly whether a fractional engagement is the right move.</p>
+    <div class="contact-cta">
+      <a class="btn btn-solid" href="mailto:lawrence.brittney2@gmail.com?subject=Engagement%20Inquiry">Email lawrence.brittney2@gmail.com</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/brittneynliburd" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="year"></span> Marketing Mercenaries</div>
+    <div>themarketingmercenaries.com</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function calc(){
+    const salary = parseFloat(document.getElementById('ft-salary').value) || 0;
+    const mult = parseFloat(document.getElementById('ft-mult').value) || 1;
+    const monthly = parseFloat(document.getElementById('fr-monthly').value) || 0;
+    const ftTotal = salary * mult;
+    const frTotal = monthly * 12;
+    const save = ftTotal - frTotal;
+    const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+    document.getElementById('out-ft').textContent = fmt(ftTotal);
+    document.getElementById('out-fr').textContent = fmt(frTotal);
+    document.getElementById('out-save').textContent = fmt(save);
+  }
+  calc();
+</script>

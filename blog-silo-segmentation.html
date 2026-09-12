@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What "Silo" Gets Right About Your Security Stack — Marketing Mercenaries</title>
+<meta name="description" content="Silo's rigid, information-starved levels are a near-perfect metaphor for how security teams and GTM orgs both fail: contained systems, but no shared picture.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+  :root{
+    --ink:#12141c; --paper:#f5f6fa; --paper-2:#eaecf4; --line:#12141c1a;
+    --line-dark:#f5f6fa22; --indigo:#4b4ef2; --indigo-dim:#3638c4; --lime:#8ee000;
+    --ink-text:#eef0fa; --ink-text-dim:#9ba0c0; --paper-text:#171928; --paper-text-dim:#5c6080;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;color-scheme:light;}
+  body{margin:0;background:var(--paper);color:var(--paper-text);font-family:'Manrope',-apple-system,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  h1,h2,.display{font-family:'Space Grotesk',Arial,sans-serif;font-weight:700;line-height:1.12;text-wrap:balance;margin:0;letter-spacing:-0.01em;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding-inline:24px;}
+  @media (max-width:480px){.wrap{padding-inline:16px;}}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);}
+  .topbar-inner{max-width:760px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  @media (max-width:480px){.topbar-inner{padding:14px 16px;}}
+  .brand-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;}
+  .back-link{font-size:0.85rem;font-weight:600;text-decoration:none;color:var(--paper-text-dim);}
+  .back-link:hover{color:var(--indigo-dim);}
+
+  article{padding-block:44px 64px;}
+  .kicker{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.03em;color:var(--indigo-dim);margin-bottom:14px;}
+  h1.title{font-size:clamp(1.7rem,4.4vw,2.5rem);margin-bottom:20px;}
+  .dek{font-size:1.08rem;color:var(--paper-text-dim);line-height:1.6;margin-bottom:8px;}
+  .meta{font-size:0.82rem;color:var(--paper-text-dim);margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--line);}
+
+  .article-body p{font-size:1.03rem;line-height:1.75;margin:0 0 20px;}
+  .article-body h2{font-size:1.4rem;margin:40px 0 16px;}
+
+  table{width:100%;border-collapse:collapse;margin:28px 0;font-size:0.92rem;}
+  th,td{text-align:left;padding:10px 12px;border:1px solid var(--line);vertical-align:top;}
+  th{background:var(--paper-2);font-weight:700;}
+
+  figure{margin:32px 0;padding:20px;background:#fff;border:1px solid var(--line);border-radius:8px;}
+  figure svg{max-width:100%;height:auto;color:var(--paper-text);display:block;margin:0 auto;}
+  figcaption{font-size:0.85rem;color:var(--paper-text-dim);margin-top:14px;line-height:1.5;text-align:center;}
+
+  .byline{border-top:1px solid var(--line);margin-top:44px;padding-top:24px;font-size:0.92rem;color:var(--paper-text-dim);font-style:italic;}
+
+  .midcta{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:32px;text-align:center;}
+  .midcta p{margin:0 0 14px;font-size:1.05rem;font-weight:600;color:var(--paper-text);}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;font-size:0.88rem;font-weight:600;text-decoration:none;border-radius:6px;border:none;background:var(--indigo);color:#fff;}
+
+  footer{border-top:1px solid var(--line-dark);background:var(--ink);color:var(--ink-text-dim);}
+  footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:0.8rem;}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-inner">
+  <div class="brand-name">Marketing Mercenaries</div>
+  <a class="back-link" href="blog.html">← All Dispatches</a>
+</div></div>
+
+<article class="wrap">
+  <div class="kicker">Dispatch · Security &amp; GTM</div>
+  <h1 class="title">What "Silo" Gets Right About Your Security Stack, and Your Marketing Org</h1>
+  <p class="dek">Segmentation without shared visibility isn't zero trust. It's a bunker with better branding.</p>
+  <div class="meta">Brittney Lawrence</div>
+
+  <div class="article-body">
+    <p>If you've watched Apple TV's Silo, you already know the premise, even if you've never worked in cybersecurity or B2B marketing. Thousands of people live in a massive underground bunker, split into rigid levels. Information about the outside world is tightly controlled. Asking too many questions about what's happening a few floors away, or what happened generations ago, is treated as dangerous. Even the small things are engineered against you: the elevators barely run, not because anyone benefits from that, but because friction between levels keeps people from moving up, or finding out too much about what's above them.</p>
+
+    <p>Now the surprising part: I've sat in enough security reviews and GTM planning meetings to tell you that's not science fiction. That's Tuesday.</p>
+
+    <h2>Segmentation is good. Blindness is not.</h2>
+    <p>Let's start with the literal security lesson, because it's a real one. Network segmentation exists for a good reason: contain a breach, limit the blast radius, keep one compromised system from taking down everything connected to it. I've written about this exact principle for small businesses. Segment your systems, and a single ransomware infection doesn't have to become a company-wide catastrophe.</p>
+    <p>But Silo's residents aren't just segmented from each other physically. They're segmented from information. Nobody on one level knows what's really happening on another, and like those elevators, that isn't an accident of design, it's the design. Nobody has the full picture, on purpose, and that's exactly what lets the actual threat operate undetected for generations. Here's the difference between segmentation that protects you and segmentation that just blinds you:</p>
+
+    <table>
+      <tr><th></th><th>Segmentation done right</th><th>Segmentation done like Silo</th></tr>
+      <tr><td>Systems</td><td>Isolated to contain breaches</td><td>Isolated to contain breaches</td></tr>
+      <tr><td>Information</td><td>Shared across teams monitoring the whole environment</td><td>Locked inside each team's own level</td></tr>
+      <tr><td>Result when something's wrong</td><td>Caught fast, cross-team response</td><td>Nobody has enough context to notice until it's a crisis</td></tr>
+    </table>
+
+    <figure role="img" aria-label="Two identical sets of three isolated systems. In the left set, each system also connects to a shared visibility layer that monitors all three together. In the right set, there is no shared layer, and a threat moves undetected from the first system to the third, passing behind the second.">
+      <svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor"></path>
+          </marker>
+          <marker id="arrowLime" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" style="fill:var(--lime)"></path>
+          </marker>
+        </defs>
+
+        <!-- LEFT PANEL: segmentation done right -->
+        <text x="180" y="24" text-anchor="middle" font-size="13" font-weight="700">Segmentation done right</text>
+        <rect x="80" y="46" width="200" height="46" rx="6" fill="none" stroke="currentColor"></rect>
+        <text x="180" y="74" text-anchor="middle" font-size="12">System A</text>
+        <rect x="80" y="124" width="200" height="46" rx="6" fill="none" stroke="currentColor"></rect>
+        <text x="180" y="152" text-anchor="middle" font-size="12">System B</text>
+        <rect x="80" y="202" width="200" height="46" rx="6" fill="none" stroke="currentColor"></rect>
+        <text x="180" y="230" text-anchor="middle" font-size="12">System C</text>
+
+        <rect x="60" y="278" width="240" height="30" rx="6" style="fill:var(--paper-2);stroke:currentColor"></rect>
+        <text x="180" y="298" text-anchor="middle" font-size="11.5" font-weight="700">Shared visibility layer</text>
+
+        <line x1="180" y1="92" x2="180" y2="278" stroke="currentColor" stroke-width="1.4" marker-end="url(#arrow)" marker-start="url(#arrow)"></line>
+        <line x1="120" y1="170" x2="120" y2="278" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 3"></line>
+        <line x1="240" y1="170" x2="240" y2="278" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 3"></line>
+
+        <!-- RIGHT PANEL: segmentation like Silo -->
+        <text x="580" y="24" text-anchor="middle" font-size="13" font-weight="700">Segmentation like Silo</text>
+        <rect x="480" y="46" width="200" height="46" rx="6" fill="none" stroke="currentColor"></rect>
+        <text x="580" y="74" text-anchor="middle" font-size="12">System A</text>
+        <rect x="480" y="124" width="200" height="46" rx="6" fill="none" stroke="currentColor"></rect>
+        <text x="580" y="152" text-anchor="middle" font-size="12">System B</text>
+        <rect x="480" y="202" width="200" height="46" rx="6" fill="none" stroke="currentColor"></rect>
+        <text x="580" y="230" text-anchor="middle" font-size="12">System C</text>
+
+        <path d="M 480 60 C 420 100, 420 190, 480 216" fill="none" style="stroke:var(--lime)" stroke-width="2" marker-end="url(#arrowLime)"></path>
+        <text x="404" y="140" text-anchor="middle" font-size="11" style="fill:var(--lime)" font-weight="700">moves,</text>
+        <text x="404" y="153" text-anchor="middle" font-size="11" style="fill:var(--lime)" font-weight="700">unnoticed</text>
+
+        <text x="580" y="298" text-anchor="middle" font-size="11.5" style="fill:var(--paper-text-dim)">no shared layer</text>
+      </svg>
+      <figcaption>Same containment on both sides. The only difference is whether anyone has a view across systems, and that's the difference between catching a threat (or a positioning gap) early and not noticing until it's already crossed three levels.</figcaption>
+    </figure>
+
+    <p>If your SOC, your IT team, and your leadership can't see the same picture, you haven't built zero trust. You've built a bunker with better branding.</p>
+
+    <h2>The part that's actually about your marketing org</h2>
+    <p>Here's where it gets uncomfortable for a lot of B2B teams, especially at security and AI companies where the product is genuinely hard to explain: your GTM org is often run exactly like Silo. Product knows what's actually being built. Sales knows what customers are actually asking for and objecting to. Marketing knows how the category is actually being talked about externally. Security or compliance knows what claims are actually defensible. Most companies run these as separate levels, each with its own version of the truth, each a little suspicious of what the other levels are doing.</p>
+    <p>Sound familiar? It's the same failure mode, just wearing a different uniform. Not a technology problem, an information-silo problem, and it produces the same result: nobody notices the actual threat, in this case a positioning gap, a stalled pipeline, a competitor quietly redefining the category, until it's already a crisis. It usually looks something like this: product ships a feature, sales doesn't know how to position it yet, marketing doesn't even know it shipped, the content goes six months stale, and a competitor names the category first while everyone was still waiting on the next floor to say something.</p>
+
+    <h2>Why one person owning the full picture is the actual fix</h2>
+    <p>This is exactly why the fractional model works better for technical, category-defining companies than hiring three separate specialists who each own one level. A content person who's never touched the product roadmap can't catch the gap. A strategist without technical depth can't tell when a claim isn't defensible. Someone who only does sales enablement never sees the search data showing the narrative isn't landing.</p>
+    <p>You don't fix a Silo problem by adding another wall. You fix it by putting someone in the loop who's actually allowed to see every level, whose job is connecting them into one story instead of defending their own floor. That's not a metaphor I'm reaching for to make a point, it's the actual reason "fractional head of product marketing" beats another specialist hire for companies that can't afford to have their positioning, their pipeline, and their technical accuracy each managed by people who never talk to each other.</p>
+  </div>
+
+  <div class="byline">Brittney Lawrence is a fractional product marketing leader for security and AI companies, and yes, she has opinions about prestige sci-fi.</div>
+</article>
+
+<div class="midcta"><div class="wrap">
+  <p>Sound like your GTM org right now?</p>
+  <a class="btn" href="mailto:lawrence.brittney2@gmail.com?subject=Engagement%20Inquiry">Email Me About Your Project</a>
+</div></div>
+
+<footer><div class="wrap">
+  <div>© <span id="year"></span> Marketing Mercenaries</div>
+  <div>themarketingmercenaries.com</div>
+</div></footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

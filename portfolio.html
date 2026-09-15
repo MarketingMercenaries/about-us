@@ -1,130 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Full Portfolio — Marketing Mercenaries</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
-
-  :root{
-    --ink:#12141c;
-    --ink-2:#1a1d28;
-    --paper:#f5f6fa;
-    --paper-2:#eaecf4;
-    --line:#12141c1a;
-    --line-dark:#f5f6fa22;
-    --indigo:#4b4ef2;
-    --indigo-dim:#3638c4;
-    --lime:#8ee000;
-    --ink-text:#eef0fa;
-    --ink-text-dim:#9ba0c0;
-    --paper-text:#171928;
-    --paper-text-dim:#5c6080;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;color-scheme:light;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--paper-text);
-    font-family:'Manrope', -apple-system, Arial, sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  ::selection{background:var(--indigo);color:#fff;}
-  h1,h2,h3,.display{
-    font-family:'Space Grotesk', Arial, sans-serif;
-    font-weight:700;
-    line-height:1.08;
-    text-wrap:balance;
-    margin:0;
-    letter-spacing:-0.01em;
-  }
-  a{color:inherit;}
-  img{max-width:100%;}
-  .wrap{max-width:1140px;margin:0 auto;padding-inline:24px;}
-  @media (max-width:480px){.wrap{padding-inline:16px;}}
-
-  .topbar{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);}
-  .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;position:relative;}
-  .brand-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.05rem,2.4vw,1.25rem);}
-  .brand-tag{font-size:0.72rem;color:var(--paper-text-dim);}
-  .back-link{font-size:0.85rem;font-weight:600;text-decoration:none;color:var(--paper-text-dim);display:flex;align-items:center;gap:6px;}
-  .back-link:hover{color:var(--indigo-dim);}
-
-  .pf-hero{background:var(--ink);color:var(--ink-text);border-bottom:1px solid var(--line-dark);}
-  .pf-hero .wrap{padding-block:44px 40px;}
-  .pf-hero h1{font-size:clamp(1.8rem,4.6vw,2.6rem);color:#fff;max-width:22ch;}
-  .pf-hero p{max-width:60ch;font-size:1.02rem;color:var(--ink-text-dim);line-height:1.65;margin-top:14px;}
-
-  section{padding-block:48px;}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;font-size:0.88rem;font-weight:600;text-decoration:none;border-radius:6px;border:none;transition:transform .15s ease;cursor:pointer;}
-  .btn:hover{transform:translateY(-1px);}
-  .btn-solid{background:var(--indigo);color:#fff;}
-
-  .pf-lede{font-size:0.95rem;color:var(--paper-text-dim);margin:0 0 24px;max-width:64ch;}
-  .pf-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px;}
-  .pf-filter{font-size:0.82rem;font-weight:600;padding:7px 14px;border-radius:20px;border:1px solid var(--line);background:#fff;color:var(--paper-text-dim);cursor:pointer;}
-  .pf-filter.on{background:var(--ink);color:#fff;border-color:var(--ink);}
-  .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-  @media (max-width:900px){.pf-grid{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:600px){.pf-grid{grid-template-columns:1fr;}}
-  .pf-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:8px;}
-  .pf-card.hidden{display:none;}
-  .pf-type{font-size:0.72rem;font-weight:700;text-transform:uppercase;color:var(--indigo-dim);letter-spacing:0.02em;}
-  .pf-title{font-size:0.92rem;font-weight:600;line-height:1.4;flex:1;}
-  .pf-tag{font-size:0.78rem;color:var(--paper-text-dim);}
-  .pf-link{font-size:0.85rem;color:var(--indigo-dim);text-decoration:none;font-weight:600;}
-  .pf-award{display:inline-flex;align-items:center;gap:5px;font-size:0.7rem;font-weight:600;text-transform:uppercase;color:#8a6800;background:#fdf3d8;border:1px solid #ecd48a;padding:3px 8px;border-radius:20px;width:fit-content;}
-
-  .midcta{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:32px;text-align:center;}
-  .midcta p{margin:0 0 14px;font-size:1.05rem;font-weight:600;color:var(--paper-text);}
-
-  footer{border-top:1px solid var(--line-dark);background:var(--ink);color:var(--ink-text-dim);}
-  footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:0.8rem;}
-</style>
-</head>
-<body>
-
-<div class="topbar">
-  <div class="wrap topbar-inner">
-    <div>
-      <div class="brand-name">Marketing Mercenaries</div>
-      <div class="brand-tag">Fractional Product Marketing</div>
-    </div>
-    <a class="back-link" href="index.html">← Back to main site</a>
-  </div>
-</div>
-
-<header class="pf-hero">
-  <div class="wrap">
-    <h1>The full portfolio</h1>
-    <p>20+ published pieces across AT&amp;T, Kobiton, and Auth0/authID: 8 ebooks, 4 videos, and more than a dozen technical articles and blog posts, several award-winning.</p>
-  </div>
-</header>
-
-<section>
-  <div class="wrap">
-    <p class="pf-lede">Filter by type, or scroll the whole list.</p>
-    <div class="pf-filters">
-      <button class="pf-filter on" onclick="pf('all',this)">All</button>
-      <button class="pf-filter" onclick="pf('ebook',this)">Ebooks</button>
-      <button class="pf-filter" onclick="pf('video',this)">Videos</button>
-      <button class="pf-filter" onclick="pf('article',this)">Articles</button>
-    </div>
-    <div class="pf-grid" id="pf-grid">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Published Work &amp; Portfolio | Marketing Mercenaries</title><meta name="description" content="Explore published work by Brittney Lawrence across cybersecurity, AI, networking, and mobile testing. Research, positioning, buyer education, and execution."><meta name="author" content="Brittney Lawrence"><link rel="canonical" href="https://themarketingmercenaries.com/portfolio.html"><meta property="og:title" content="Published Work &amp; Portfolio | Marketing Mercenaries"><meta property="og:description" content="Explore published work by Brittney Lawrence across cybersecurity, AI, networking, and mobile testing. Research, positioning, buyer education, and execution."><meta property="og:type" content="website"><meta property="og:url" content="https://themarketingmercenaries.com/portfolio.html"><meta property="og:image" content="https://themarketingmercenaries.com/assets/quantum-cover.png"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="assets/edition.css"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Published Work & Portfolio | Marketing Mercenaries", "description": "Explore published work by Brittney Lawrence across cybersecurity, AI, networking, and mobile testing. Research, positioning, buyer education, and execution.", "url": "https://themarketingmercenaries.com/portfolio.html", "author": {"@type": "Person", "name": "Brittney Lawrence"}, "publisher": {"@type": "Organization", "name": "Marketing Mercenaries"}}</script></head><body class="edition"><a class="skip" href="#main">Skip to content</a><header class="edition-nav"><div class="edition-wrap nav-inner"><a class="mm-brand" href="index.html"><strong>Marketing Mercenaries</strong><span>Marketing strategy, systems + execution</span></a><nav aria-label="Main navigation"><a href="index.html#services">Services</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a class="edition-button" href="index.html#contact">Discuss your project <span aria-hidden="true">↗</span></a></nav></div></header><main id="main"><section class="portfolio-lead"><div class="edition-wrap portfolio-split"><div class="portfolio-copy"><p class="label">Selected work</p><h1>Good strategy<br> leaves evidence<span class="blue">.</span></h1><p class="lede">I turn complex products and market questions into stories, content, and tools people can use. Here’s the work that made it into the world.</p><div class="button-row"><a class="edition-button" href="#published-work">Explore the work ↓</a><a class="text-link" href="#contact">Discuss your project ↗</a></div><p class="byline">Brittney Lawrence · Marketing Mercenaries</p></div><a class="featured-document" href="https://www.business.att.com/content/dam/attbusiness/briefs/carrier-scale-networks.pdf" target="_blank" rel="noopener"><div class="document-stage"><span class="stage-label">Featured publication · AT&amp;T Business</span><img src="assets/quantum-cover.png" alt="Cover of Quantum computing and AI may break digital security as we know it" width="795" height="1030"><span class="doc-link">Read the white paper ↗</span></div></a></div></section>
+<section class="featured-context"><div class="edition-wrap context-grid"><p class="label">Behind the featured work</p><div><h2>A changing threat landscape.<br> A story about the network’s role.</h2><p>Research-led thought leadership connecting quantum computing, AI, and carrier-scale network defense.</p><span class="credit">Contribution: authored thought leadership · AT&amp;T Business</span></div></div></section>
+<section class="edition-section"><div class="edition-wrap"><div class="section-heading"><h2>Different audiences.<br> The same depth of thinking.</h2><p>From practical buyer education to a visual explanation of network security.</p></div><div class="support-grid"><article class="support-card"><a class="support-art guide-art" href="https://www.business.att.com/content/dam/attbusiness/ebooks/guide-to-reducing-cyber-risk.pdf" target="_blank" rel="noopener"><img src="assets/smb-cover.png" alt="Cover of Smart security, small business" loading="lazy"></a><div class="support-body"><p class="label">Buyer education · AT&amp;T Business</p><h3>Smart security, small business</h3><p>A practical guide to reducing cyber risk and building a plan that can grow with the business.</p><span class="credit">Contribution: authored buyer education</span><a class="text-link" href="https://www.business.att.com/content/dam/attbusiness/ebooks/guide-to-reducing-cyber-risk.pdf" target="_blank" rel="noopener">Read the guide ↗</a></div></article><article class="support-card"><div class="support-art video-art"><span class="label">AT&amp;T Dynamic Defense</span><strong>Make the<br> protection<br> visible.</strong><a class="play-link" href="https://www.youtube.com/watch?v=qTQPKMltqQA" target="_blank" rel="noopener" aria-label="Watch the AT&T Dynamic Defense use case video">▶</a></div><div class="support-body"><p class="label">Video · AT&amp;T Business</p><h3>Dynamic Defense in action</h3><p>A visual explanation of network-native threat detection and response.</p><span class="credit">Contribution: messaging, script, and production collaboration</span><div class="award-inline"><img src="communicator-trophy-distinction.png" alt="Communicator Award of Distinction" loading="lazy"><span>Communicator Distinction<br> 2× AVA Honorable Mention</span></div><a class="text-link" href="https://www.youtube.com/watch?v=qTQPKMltqQA" target="_blank" rel="noopener">Watch the video ↗</a></div></article></div></div></section>
+<section class="edition-section catalog-section" id="published-work"><div class="edition-wrap"><div class="section-heading"><div><p class="label">Published portfolio</p><h2>Find the work<br> relevant to yours.</h2></div><p>Explore by format, company, or subject. Credits identify my contribution within the wider client team.</p></div><div class="filter-panel"><label for="portfolio-search">Search published work</label><input id="portfolio-search" type="search" placeholder="Try SASE, cybersecurity, Kobiton..."><div class="filter-controls"><button type="button" data-filter="all" aria-pressed="true">All work</button><button type="button" data-filter="web" aria-pressed="false">Web pages</button><button type="button" data-filter="ebook" aria-pressed="false">Guides &amp; white papers</button><button type="button" data-filter="video" aria-pressed="false">Videos</button><button type="button" data-filter="article" aria-pressed="false">Articles</button></div><p class="filter-count" id="portfolio-count" role="status" aria-live="polite"></p></div><div class="pf-grid" id="pf-grid"><div class="pf-card" data-t="ebook"><div class="pf-type">White paper · AT&amp;T Business</div><h2 class="pf-title">Quantum computing and AI may break digital security as we know it</h2><p class="pf-tag">Why carrier-scale networks are our best defense. Research-led thought leadership connecting AI, quantum risk, and network defense.</p><div class="pf-tag">Authored thought leadership</div><a class="pf-link" href="https://www.business.att.com/content/dam/attbusiness/briefs/carrier-scale-networks.pdf" target="_blank" rel="noopener">Read published PDF →</a></div><div class="pf-card" data-t="ebook"><div class="pf-type">Small-business guide · AT&amp;T Business</div><h2 class="pf-title">Smart security, small business: A practical guide to reducing cyber risk</h2><p class="pf-tag">Accessible cybersecurity guidance that helps small businesses develop a plan that can grow with them.</p><div class="pf-tag">Authored buyer education</div><a class="pf-link" href="https://www.business.att.com/content/dam/attbusiness/ebooks/guide-to-reducing-cyber-risk.pdf" target="_blank" rel="noopener">Read published PDF →</a></div><div class="pf-card" data-t="web"><div class="pf-type">Portfolio page · AT&amp;T Business</div><h2 class="pf-title">Cybersecurity services</h2><div class="pf-tag">Authored page copy. Client teams owned design, development, and approval.</div><a class="pf-link" href="https://www.business.att.com/portfolios/cybersecurity.html" target="_blank" rel="noopener">View published page →</a></div><div class="pf-card" data-t="web"><div class="pf-type">Product page · AT&amp;T Business</div><h2 class="pf-title">Managed SASE</h2><div class="pf-tag">Authored page copy. Client teams owned design, development, and approval.</div><a class="pf-link" href="https://www.business.att.com/products/sase.html" target="_blank" rel="noopener">View published page →</a></div><div class="pf-card" data-t="web"><div class="pf-type">Product page · AT&amp;T Business</div><h2 class="pf-title">Dynamic Defense</h2><div class="pf-tag">Authored page copy. Client teams owned design, development, and approval.</div><a class="pf-link" href="https://www.business.att.com/products/att-dynamic-defense.html" target="_blank" rel="noopener">View published page →</a></div>
 
       <div class="pf-card" data-t="ebook">
         <div class="pf-type">Ebook · AT&amp;T Business</div>
         <div class="pf-title">Simplifying SASE, SSE, SD-WAN and ZTNA</div>
-        <div class="pf-award">5 awards incl. Stevie Gold, Best White Paper</div>
+        <div class="pf-award">Award-winning ebook</div>
         <a class="pf-link" href="https://www.business.att.com/content/dam/attbusiness/ebooks/simplifying-sase.pdf" target="_blank" rel="noopener">Read the ebook →</a>
       </div>
-      <div class="pf-card" data-t="ebook">
-        <div class="pf-type">Guide · AT&amp;T Business</div>
-        <div class="pf-title">2026 Small Business Cybersecurity Guide</div>
-        <div class="pf-tag">Available on request</div>
-      </div>
+
       <div class="pf-card" data-t="ebook">
         <div class="pf-type">Ebook · Kobiton</div>
         <div class="pf-title">Kobiton vs. Perfecto: Choosing the Best Mobile Testing Solution</div>
@@ -159,7 +44,7 @@
       <div class="pf-card" data-t="video">
         <div class="pf-type">Video · AT&amp;T Business</div>
         <div class="pf-title">AT&amp;T Dynamic Defense Use Case Video</div>
-        <div class="pf-award">3 awards incl. 2 AVA Digital Honorable Mentions</div>
+        <div class="pf-award">Award-recognized video</div>
         <a class="pf-link" href="https://www.youtube.com/watch?v=qTQPKMltqQA" target="_blank" rel="noopener">Watch video →</a>
       </div>
       <div class="pf-card" data-t="video">
@@ -208,35 +93,18 @@
       <div class="pf-card" data-t="article"><div class="pf-type">Blog · AT&amp;T Business</div><div class="pf-title">Network security: a new model for protecting business</div><a class="pf-link" href="https://www.business.att.com/learn/articles/network-security-a-new-model-for-protecting-business.html" target="_blank" rel="noopener">Read →</a></div>
       <div class="pf-card" data-t="article"><div class="pf-type">Knowledge Base · AT&amp;T</div><div class="pf-title">How to prevent cross-site scripting</div><a class="pf-link" href="https://www.business.att.com/resources/knowledge-center/how-to-prevent-cross-site-scripting.html" target="_blank" rel="noopener">Read →</a></div>
 
-    </div>
-  </div>
-</section>
-
-<div class="midcta">
-  <div class="wrap">
-    <p>Enough proof? Let's talk about your project.</p>
-    <a class="btn btn-solid" href="mailto:lawrence.brittney2@gmail.com?subject=Engagement%20Inquiry">Email Me About Your Project</a>
-  </div>
-</div>
-
-<footer>
-  <div class="wrap">
-    <div>© <span id="year"></span> Marketing Mercenaries</div>
-    <div>themarketingmercenaries.com</div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  function pf(tag, btn){
-    document.querySelectorAll('.pf-filter').forEach(b=>b.classList.remove('on'));
-    btn.classList.add('on');
-    document.querySelectorAll('#pf-grid .pf-card').forEach(c=>{
-      c.classList.toggle('hidden', tag !== 'all' && c.dataset.t !== tag);
-    });
-  }
-</script>
-
-</body>
-</html>
+    </div><button class="edition-button" id="portfolio-more" type="button" style="margin-top:24px">Show more work ↓</button><p class="empty-state" id="portfolio-empty" hidden>No matching work. Try a different search or choose All work.</p></div></section><section class="edition-contact" id="contact"><div class="edition-wrap contact-split"><div><p class="label">Work with me</p><h2>What are you<br> working on?</h2><p class="lede">Tell me what you’re trying to build, fix, or move forward. We’ll start with a complimentary conversation and agree on the scope, fee, and timing before any paid work begins.</p><a class="text-link" href="mailto:lawrence.brittney2@gmail.com">Prefer email? Write to me ↗</a></div><form class="growth-form" action="https://formspree.io/f/maeygorz" method="POST">
+        <div class="form-row"><label for="engagement-interest">What kind of help do you need?</label><select id="engagement-interest" name="engagement_interest"><option>Not sure yet</option><option>GTM Diagnostic</option><option>Strategic Sprint</option><option>Embedded GTM leadership</option><option>Custom engagement</option></select></div>
+        <input id="entry-page" name="entry_page" type="hidden" value="">
+        <input id="entry-referrer" name="entry_referrer" type="hidden" value="">
+        <input id="utm-source" name="utm_source" type="hidden" value="">
+        <input id="utm-medium" name="utm_medium" type="hidden" value="">
+        <input id="utm-campaign" name="utm_campaign" type="hidden" value="">
+        <div class="form-row"><label for="name">Name</label><input id="name" name="name" type="text" required autocomplete="name"></div>
+        <div class="form-row"><label for="email">Work email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        <div class="form-row"><label for="company">Company</label><input id="company" name="company" type="text" required autocomplete="organization"></div>
+        <div class="form-row"><label for="website">Website URL</label><input id="website" name="website" type="url" autocomplete="url" placeholder="https://yourcompany.com"></div>
+        <div class="form-row"><label for="problem">What are you trying to build or fix?</label><textarea id="problem" name="message" placeholder="A launch, a clearer market story, a content engine, more capacity..."></textarea></div>
+        <button class="btn btn-primary" type="submit">Request a scoping conversation</button>
+        <p class="form-promise">Your inquiry goes directly to me. Please do not include confidential product or customer information in this form.</p>
+      </form></div></section></main><footer class="edition-footer"><div class="edition-wrap footer-flex"><div><strong>Marketing Mercenaries</strong><p>Marketing strategy, systems + execution</p></div><nav aria-label="Footer"><a href="index.html#services">Services</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Zero to Market</a><a href="index.html#contact">Contact</a></nav><small>© <span id="year"></span> Marketing Mercenaries</small></div></footer><script>document.getElementById('year').textContent=new Date().getFullYear()</script><script>document.getElementById('year').textContent=new Date().getFullYear();let category='all',visibleLimit=9;const cards=[...document.querySelectorAll('.pf-card')];const search=document.getElementById('portfolio-search');const buttons=[...document.querySelectorAll('[data-filter]')];const more=document.getElementById('portfolio-more');function filter(){const q=search.value.toLowerCase().trim();let n=0;cards.forEach(c=>{const match=(category==='all'||c.dataset.t===category)&&c.textContent.toLowerCase().includes(q);if(match)n++;c.hidden=!match||n>visibleLimit});document.getElementById('portfolio-count').textContent='Showing '+Math.min(n,visibleLimit)+' of '+n+' matching work items.';document.getElementById('portfolio-empty').hidden=n>0;more.hidden=n<=visibleLimit}buttons.forEach(b=>b.addEventListener('click',()=>{category=b.dataset.filter;visibleLimit=9;buttons.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));filter()}));search.addEventListener('input',()=>{visibleLimit=9;filter()});more.addEventListener('click',()=>{const previous=visibleLimit;visibleLimit+=9;filter();const first=cards.filter(c=>!c.hidden)[previous];if(first){first.setAttribute('tabindex','-1');first.focus()}});filter();</script><script>const params=new URLSearchParams(location.search);document.getElementById('entry-page').value=location.pathname;document.getElementById('entry-referrer').value=document.referrer?new URL(document.referrer).origin:'direct';for(const key of ['source','medium','campaign'])document.getElementById('utm-'+key).value=params.get('utm_'+key)||'';</script></body></html>

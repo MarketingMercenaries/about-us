@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Your Security Stack Was Built to Stop Humans — Marketing Mercenaries</title>
-<meta name="description" content="Agentic AI and deepfake voice fraud are the same threat wearing different clothes: both exploit trust in identity instead of breaking through a perimeter.">
+<title>Agentic AI, deepfake fraud, and the trust problem | Marketing Mercenaries</title>
+
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+  
   :root{
     --ink:#12141c; --paper:#f5f6fa; --paper-2:#eaecf4; --line:#12141c1a;
     --line-dark:#f5f6fa22; --indigo:#4b4ef2; --indigo-dim:#3638c4; --lime:#8ee000;
@@ -52,41 +52,54 @@
 
   footer{border-top:1px solid var(--line-dark);background:var(--ink);color:var(--ink-text-dim);}
   footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:0.8rem;}
+
+:root{--ink:#111d30;--paper:#f3f5f7;--paper-2:#e9eef5;--line:#d7dee7;--indigo:#2456d8;--indigo-dim:#1d43a9;--lime:#c4ef70;--paper-text:#172333;--paper-text-dim:#526174;--ink-text-dim:#c4cdda}
+body,h1,h2,h3,.display,.brand-name{font-family:Arial,Helvetica,sans-serif}
+h1,h2,h3{letter-spacing:-.035em}p{line-height:1.7}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #397aff;outline-offset:4px}
+.topbar .brand-name a{text-decoration:none}.back-link{min-height:44px;display:inline-flex;align-items:center}
+footer a{color:#fff}.pf-card,.post{border-radius:5px}.pf-type,.post-meta{font-family:ui-monospace,monospace;letter-spacing:.04em}
+.filter-panel{margin-bottom:28px}.filter-panel label{display:block;font-size:.85rem;font-weight:700;margin-bottom:8px}.filter-panel input{display:block;width:100%;font:inherit;padding:13px 15px;background:#fff;border:1px solid #aab7c6;border-radius:5px;margin-bottom:18px}.filter-controls{display:flex;gap:8px;flex-wrap:wrap}
+.filter-controls button,.pf-filter{min-height:44px;border-radius:5px;font:inherit;font-size:.85rem;padding:10px 16px;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--paper-text)}
+.filter-controls button[aria-pressed="true"],.pf-filter[aria-pressed="true"]{background:var(--ink);color:#fff}
+.filter-count{font-size:.85rem;color:var(--paper-text-dim);margin:16px 0}
+[hidden]{display:none!important}.empty-state{border:1px solid var(--line);padding:24px;background:#fff}
+.answer-box,.toc,.related-reading{padding:24px;background:#edf2fa;border:1px solid var(--line);margin:24px 0}
+.answer-box h2,.toc h2,.related-reading h2{font-size:1.1rem;margin:0 0 12px}.answer-box p{margin:0}.toc ol{padding-left:20px;margin:0}.toc li{margin:8px 0;line-height:1.5}
+.breadcrumbs{display:flex;gap:12px;flex-wrap:wrap;font-size:.8rem;margin:24px 0;color:var(--paper-text-dim)}
+.article-body{overflow-wrap:anywhere}.table-wrap{overflow-x:auto;max-width:100%}.article-body table{min-width:570px}
+.source-note{font-size:.8rem;color:var(--paper-text-dim)}.midcta .btn{min-height:44px}.post-body{width:100%}
+@media(max-width:600px){.post{padding:20px;gap:12px}.post-icon{display:none}.topbar-inner{flex-wrap:wrap}.pf-card{padding:22px}.answer-box,.toc,.related-reading{padding:20px}.article-body h2{scroll-margin-top:120px}}
 </style>
-</head>
-<body>
+<meta name="description" content="A GTM perspective on agentic AI, voice impersonation, and the assumptions behind identity and trust."><link rel="canonical" href="https://themarketingmercenaries.com/blog-agentic-ai-deepfakes.html"><meta name="author" content="Brittney Lawrence"><meta property="og:type" content="article"><meta property="og:title" content="Agentic AI, deepfake fraud, and the trust problem | Marketing Mercenaries"><meta property="og:description" content="A GTM perspective on agentic AI, voice impersonation, and the assumptions behind identity and trust."><meta property="og:url" content="https://themarketingmercenaries.com/blog-agentic-ai-deepfakes.html"><meta name="twitter:card" content="summary"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "name": "Agentic AI, deepfake fraud, and the trust problem | Marketing Mercenaries", "url": "https://themarketingmercenaries.com/blog-agentic-ai-deepfakes.html", "description": "A GTM perspective on agentic AI, voice impersonation, and the assumptions behind identity and trust.", "headline": "Agentic AI, deepfake fraud, and the trust problem", "author": {"@type": "Person", "name": "Brittney Lawrence", "url": "https://themarketingmercenaries.com/#about"}, "publisher": {"@type": "Organization", "name": "Marketing Mercenaries", "url": "https://themarketingmercenaries.com/"}, "dateModified": "2026-09-15", "isPartOf": {"@type": "Blog", "name": "Zero to Market", "url": "https://themarketingmercenaries.com/blog.html"}}</script><link rel="stylesheet" href="assets/edition.css"></head>
+<body class="ztm-article"><a class="skip" href="#article-main">Skip to content</a>
 
-<div class="topbar"><div class="topbar-inner">
-  <div class="brand-name">Marketing Mercenaries</div>
-  <a class="back-link" href="blog.html">← All Dispatches</a>
-</div></div>
-
-<article class="wrap">
-  <div class="kicker">Dispatch · Security</div>
-  <h1 class="title">Your Security Stack Was Built to Stop Humans. It Wasn't Built for This.</h1>
-  <p class="dek">Agentic AI and deepfake voice fraud aren't two separate threats. They're the same one wearing different clothes.</p>
+<header class="edition-nav"><div class="edition-wrap nav-inner"><a class="mm-brand" href="index.html"><strong>Marketing Mercenaries</strong><span>Marketing strategy, systems + execution</span></a><nav aria-label="Main navigation"><a href="index.html#services">Services</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a class="edition-button" href="index.html#contact">Discuss your project <span aria-hidden="true">↗</span></a></nav></div></header><div class="article-masthead edition-wrap"><a href="blog.html"><span class="ztm-symbol" aria-hidden="true">ZTM<span>↗</span></span><strong>Zero to Market</strong></a><span>A Marketing Mercenaries publication</span></div><article class="wrap" id="article-main"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="blog.html">Zero to Market</a></nav>
+  <div class="kicker">Analysis · Markets &amp; Technology</div>
+  <h1 class="title">Agentic AI, deepfake fraud, and the trust problem.</h1>
+  <p class="dek">Agentic AI and deepfake voice fraud are distinct challenges with a shared question: what evidence establishes identity and authority?</p>
   <div class="meta">Brittney Lawrence</div>
 
-  <div class="article-body">
+  <p class="source-note">Updated <time datetime="2026-09-15">September 15, 2026</time></p><div class="answer-box"><h2>What connects agentic AI and deepfake voice fraud?</h2><p>Both raise questions about who or what is acting, what authority it has, and which evidence deserves trust. They are distinct mechanisms, but this analysis explores their shared implications for security narratives and buyer education.</p></div><nav class="toc" aria-label="In this article"><h2>In this article</h2><ol><li><a href="#section-1">The identity your access controls never accounted for</a></li><li><a href="#section-2">When the attack doesn't sound like an attack</a></li><li><a href="#section-3">Same root problem, two different disguises</a></li><li><a href="#section-4">Why this matters for your GTM, not just your SOC</a></li></ol></nav><div class="article-body">
     <p>Most security programs assume two things: whatever's trying to get in is a person, and you'll have a moment to notice before it does damage. In 2026, both of those assumptions are breaking, and most teams haven't rebuilt around it yet.</p>
 
-    <h2>The identity your access controls never accounted for</h2>
+    <h2 id="section-1">The identity your access controls never accounted for</h2>
     <p>Agentic AI is the security topic everyone's suddenly having urgent meetings about, and here's why: these systems don't just process information, they act. Give an AI agent standing credentials and API access, and it can move through a network, make decisions, and take action without a human approving each step. That's the entire point of deploying one.</p>
     <p>It's also exactly the kind of access your identity and access model was never built to reason about.</p>
     <p>Zero trust still holds as a concept. Most zero trust <em>implementations</em>, in practice, were tested against phishing emails and stolen passwords, not a non-human identity with legitimate, standing access making its own calls. If you sell into identity, network, or SASE buyers, this is already their internal headache. Your content just hasn't caught up to it yet.</p>
 
-    <h2>When the attack doesn't sound like an attack</h2>
+    <h2 id="section-2">When the attack doesn't sound like an attack</h2>
     <p>While agentic AI is rewriting what "access" means, deepfake voice tech is rewriting what "verification" means. Hiya's State of the Call 2026 research found AI deepfake voice calls have now reached 1 in 4 Americans. That's not a someday problem. That's a right-now problem, and it's hitting the exact channel enterprises have trusted for identity verification for decades: a human voice on the phone.</p>
     <p>Voice-cloned executive fraud is the sharpest version of this for enterprises. The attacker doesn't breach your network. They need a few seconds of audio and a believable reason for someone in finance to move fast. The fraud doesn't look like a hack. It sounds like your CFO.</p>
 
-    <table>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Comparison table"><table>
       <tr><th></th><th>Traditional social engineering</th><th>AI-enabled fraud (2026)</th></tr>
       <tr><td>What gets faked</td><td>An email, a login page</td><td>A voice, a face, an entire identity</td></tr>
-      <tr><td>Detection cue</td><td>Bad grammar, mismatched domain</td><td>None. It sounds and looks right</td></tr>
+      <tr><td>Detection cue</td><td>Bad grammar, mismatched domain</td><td>Familiar voice or appearance may be misleading; independent verification is still needed</td></tr>
       <tr><td>Speed to execute</td><td>Days of setup, research</td><td>Seconds of audio, done</td></tr>
       <tr><td>Who's targeted</td><td>Anyone who clicks</td><td>Whoever holds authority to act fast</td></tr>
       <tr><td>What stops it</td><td>Employee training</td><td>Verification that doesn't rely on a human's ear</td></tr>
-    </table>
+    </table></div>
 
     <p>I spent over a year in product marketing for a voice fraud and authentication platform built to catch exactly this, deepfakes, cloned voices, synthetic speech, before they reach a human decision-maker. The pattern I saw then is the same one showing up in the research now: the fraud that works isn't the fraud that looks sophisticated. It's the one that looks like a normal, urgent ask from someone you already trust.</p>
 
@@ -94,22 +107,19 @@
 
     <p>Notice what's missing from that chain: a malicious link, a phishing email, anything your existing training taught employees to spot.</p>
 
-    <h2>Same root problem, two different disguises</h2>
-    <p>Agentic AI and deepfake fraud aren't two separate threats. They're the same one wearing different clothes: attackers no longer need to break your technical controls if they can convincingly impersonate the identity those controls are built to trust, whether that's a human executive on a call or a machine identity with standing network access. Both routes go around the front door by exploiting who or what is asking, not by picking the lock.</p>
+    <h2 id="section-3">Same root problem, two different disguises</h2>
+    <p>Agentic AI and deepfake fraud are distinct mechanisms. They can both expose gaps in how organizations establish identity, limit authority, and verify requests. An agent acting beyond its intended permissions and a caller impersonating an executive require different controls, even when both exploit misplaced trust.</p>
     <p>For security and network vendors, that means "we stop attackers" isn't a complete pitch anymore. The real question buyers are asking is: how does your platform verify that the identity making a request, human or machine, is actually who it claims to be, in real time, without slowing the business down.</p>
 
-    <h2>Why this matters for your GTM, not just your SOC</h2>
+    <h2 id="section-4">Why this matters for your GTM, not just your SOC</h2>
     <p>If your product touches identity, access, or network security in any way, this is a positioning gap sitting wide open right now. Most vendors are still marketing against last year's threat model: phishing, credential stuffing, human error. The buyers already worried about agentic AI risk and voice-cloned fraud are looking for vendors who can speak to both, fluently, not just tack "AI-powered" onto an old pitch.</p>
     <p>That's a content gap. It's also a trust gap. Closing it takes someone who's actually worked inside both worlds: technical enough to get the mechanics right, translator enough to make the CISO's version and the sales team's version sound like the same story.</p>
   </div>
 
   <div class="byline">Brittney Lawrence spent over a year in product marketing for a voice fraud detection platform before moving into network security and zero-trust identity positioning at the enterprise level.</div>
-</article>
+<aside class="related-reading"><h2>Related reading</h2><p><a href="gtm-diagnostic.html">What should a paid GTM Diagnostic include?</a></p><p><a href="blog-silo-segmentation.html">Shared visibility in security and GTM</a></p><p><a href="portfolio.html">Inspect published client work</a></p></aside><aside class="ztm-endnote"><strong>Put the thinking to work.</strong><p>Need help connecting technical expertise, market evidence, and execution?</p><a href="index.html#contact">Discuss your project ↗</a> · <a href="blog.html">Explore Zero to Market ↗</a></aside></article>
 
-<div class="midcta"><div class="wrap">
-  <p>Working on positioning for a security or identity product right now?</p>
-  <a class="btn" href="mailto:lawrence.brittney2@gmail.com?subject=Engagement%20Inquiry">Email Me About Your Project</a>
-</div></div>
+
 
 <footer><div class="wrap">
   <div>© <span id="year"></span> Marketing Mercenaries</div>
@@ -119,3 +129,4 @@
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
